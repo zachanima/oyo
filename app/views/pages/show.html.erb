@@ -1,3 +1,5 @@
-<h1>Pages#show</h1>
-<h1><%= @page.title %></h1>
-<%= link_to 'Back', pages_path %>
+<h1>
+  <%= link_to 'Edit', edit_page_path(@page) %>
+  <%= @page.title %>
+  <%= link_to 'Del', @page, :method => :delete, :confirm => 'Delete?' %>
+</h1>

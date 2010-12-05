@@ -2,7 +2,10 @@ class PagesController < ApplicationController
   before_filter :find_page, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @pages = Page.all
+    @page = Page.first
+    if @page
+      redirect_to Page.first
+    end
   end
 
   # def show
