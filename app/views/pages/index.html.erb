@@ -1,2 +1,16 @@
 <h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+
+<table>
+  <thead>
+    <th>Title</th>
+    <th colspan="2" />
+  </thead>
+  <tbody>
+    <% @pages.each do |page| %>
+      <td><%= link_to page.title, page %></td>
+      <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_page_path %>
