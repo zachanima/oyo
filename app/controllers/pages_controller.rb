@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def index
     @page = Page.first
     if @page
-      redirect_to Page.first
+      redirect_to @page
     end
   end
 
@@ -35,9 +35,9 @@ class PagesController < ApplicationController
 
   def destroy
     if @page.destroy
-      redirect_to pages_path, :notice => 'The page was successfully deleted.'
+      redirect_to pages_path, :notice => 'The page was successfully deleted'
     else
-      redirect_to @page, :alert => 'The page could not be deleted.'
+      redirect_to @page, :alert => 'The page could not be deleted'
     end
   end
 

@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+a img {
+  border-width: 0;
+}
+
 
 
 /**********
@@ -101,7 +105,9 @@ body {
 #content {
   background: rgba(255, 255, 255, 0.251) url('bg-content.png');
   border-radius: 5px;
+  color: #005e9f;
   float: right;
+  font-family: arial, sans-serif;
   margin-bottom: 40px;
   min-height: 300px;
   padding: 16px;
@@ -115,7 +121,7 @@ body {
   margin: 2px 0 0.5em 0 !important;
 }
 
-#content h1, #content h1 input {
+#content h1, #content form h1 input {
   color: #f5d900;
   font-family: 'Trebuchet MS', arial, sans-serif;
   font-size: 20pt;
@@ -123,8 +129,31 @@ body {
   text-align: right;
 }
 
+#content h2, #content form h2 input {
+  color: #fff;
+  font-family: 'Trebuchet MS', arial, sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  text-align: right;
+}
+
+#content form h1 input,
+#content form h2 input {
+  background-color: inherit;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+  
+
 
 /* Content element */
+
+#content .element {
+  margin-bottom: 16px;
+  min-height: 32px;
+  width: 100%;
+}
 
 #content .element:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -138,8 +167,9 @@ body {
   float: left;
   font-size: 8pt;
   font-weight: bold;
-  margin-left: 16px;
+  margin-left: 48px;
   overflow: hidden;
+  position: absolute;
   text-align: right;
   text-decoration: none;
   width: 32px;
@@ -185,12 +215,9 @@ body {
 #content form fieldset > input,
 #content form fieldset > a {
   border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
-#content form h1 input {
-  border: 1px solid #ccc;
-  width: 100%;
-}
 
 #content form fieldset > input {
   background-color: #005e9f;
@@ -200,7 +227,7 @@ body {
 
 #content form fieldset > a {
   background-color: #fff;
-  border-color: #ccc;
+  border-color: #ddd;
   color: #005e9f;
   display: inline-block;
   margin-left: 16px;

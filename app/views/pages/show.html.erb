@@ -1,7 +1,15 @@
 <div class="element">
   <%= link_to 'Edit', edit_page_path(@page) %>
   <%= link_to 'Del', @page, :method => :delete, :confirm => 'Delete?' %>
-  <h1>
-    <%= @page.title %>
-  </h1>
+  <h1><%= @page.title %></h1>
+</div>
+
+<% @page.elements.each do |element| %>
+  <div class="element">
+    <%= render element %>
+  </div>
+<% end %>
+
+<div class="element">
+  <%= link_to 'Text', new_page_text_path(@page) %>
 </div>

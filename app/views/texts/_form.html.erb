@@ -1,0 +1,21 @@
+<%= form_for [@page, @element],
+  :url => @element.new_record? ? page_texts_path(@page) : nil do |form| %>
+  <fieldset>
+    <ol>
+      <li>
+        <h2>
+          <%= label :element, :title %>
+          <%= text_field :element, :title %>
+        </h2>
+      </li>
+      <li>
+        <%= label :element, :text %>
+        <%= text_area :element, :text %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <%= form.submit %>
+    <%= link_to 'Cancel', @page %>
+  </fieldset>
+<% end %>
