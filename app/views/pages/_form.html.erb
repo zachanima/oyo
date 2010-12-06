@@ -1,13 +1,15 @@
 <% @page.errors.full_messages.each do |message| %>
-  <span class="error"><%= message %>.</span>
+  <p class="error"><%= message %>.</p>
 <% end %>
 
 <%= form_for @page do |form| %>
   <fieldset>
     <ol>
       <li>
-        <%= form.label :title, :class => 'required' %>
-        <%= form.text_field :title %>
+        <h1>
+          <%= form.label :title, :class => 'required' %>
+          <%= form.text_field :title %>
+        </h1>
       </li>
     </ol>
   </fieldset>

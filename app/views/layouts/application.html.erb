@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Oyo</title>
+  <title><%= @page ? @page.title : nil %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -10,11 +10,11 @@
 
 <div id="header">
   <div>
-    <img src="/images/header.png" />
+    <%= link_to image_tag('/images/header.png'), root_path %>
   </div>
 </div>
 
-<div id="container">
+<div id="main">
   <div id="nav">
     <ol>
       <% Page.all.each do |page| %>

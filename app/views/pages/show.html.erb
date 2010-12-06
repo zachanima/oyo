@@ -1,5 +1,7 @@
-<h1>
+<div class="element">
   <%= link_to 'Edit', edit_page_path(@page) %>
-  <%= @page.title %>
   <%= link_to 'Del', @page, :method => :delete, :confirm => 'Delete?' %>
-</h1>
+  <h1>
+    <%= @page.title %>
+  </h1>
+</div>

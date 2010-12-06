@@ -7,7 +7,8 @@
 }
 
 body {
-  background: #78a9ff url('bg.png') repeat-x;
+  background: #78a9ff url('bg.png') 0 75px repeat-x;
+  background-attachment: scroll;
   margin: 0;
 }
 
@@ -37,7 +38,7 @@ body {
  * CONTAINER *
  *************/
 
-#container {
+#main {
   width: 800px;
   margin: 40px auto;
 }
@@ -55,25 +56,40 @@ body {
 }
 
 #nav ol {
-  color: #fff;
-  font-size: 0.95em;
   list-style: none;
   padding-left: 0;
 }
 
 #nav a {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
   color: #fff;
   display: block;
   font-size: 0.9em;
-  font-weight: bold;
-  line-height: 1.2em;
   text-decoration: none;
 }
 
-#nav a:hover:after {
+#nav > ol > li {
+  margin-bottom: 16px;
+}
+
+#nav > ol > li > a {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#nav > ol > li > a:after {
+  visibility: hidden;
   content: '\25b8';
-  margin-left: 0.75em;
+  margin-left: 0.5em;
+}
+
+#nav > ol > li > a:hover:after {
+  visibility: visible;
+}
+
+#nav li li a:hover {
+  text-decoration: underline;
 }
 
 
@@ -95,67 +111,53 @@ body {
 
 /* Content headers */
 
-#content h1, #content input[type=text] {
+#content h1 {
+  margin: 2px 0 0.5em 0 !important;
+}
+
+#content h1, #content h1 input {
   color: #f5d900;
+  font-family: 'Trebuchet MS', arial, sans-serif;
   font-size: 20pt;
   font-weight: bold;
-  margin: 0 0 0.5em 0;
-}
-
-#content h2 {
-  color: #fff;
-  font-size: 1.5em;
-  margin: 1em 0 0.5em 0;
-}
-
-#content h1, #content h2, #content input[type=text] {
-  clear: both;
-  font-family: 'Trebuchet MS', arial, sans-serif;
   text-align: right;
 }
 
-#content h1 a {
+
+/* Content element */
+
+#content .element:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#content .element > a {
   background-color: #005e9f;
   opacity: 0.5;
   color: #fff;
   display: none;
   float: left;
   font-size: 8pt;
-  text-decoration: none;
+  font-weight: bold;
+  margin-left: 16px;
   overflow: hidden;
+  text-align: right;
+  text-decoration: none;
   width: 32px;
   height: 32px;
 }
 
-#content h1:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-#content h1:hover a {
+#content .element:hover > a {
   display: inline-block;
 }
 
-#content h1 a:hover {
+#content .element > a:hover {
   opacity: 1.0;
 }
 
-#content h1 a:last-child {
-  margin-left: 16px;
+#content .element > a:first-child {
+  margin-left: 0;
 }
 
-
-/* Content text */
-
-#content p {
-  margin: 0 0 1em 0;
-}
-
-#content p, #content li {
-  color: #005e9f;
-  font-family: arial, sans-serif;
-  font-size: 0.95em;
-  line-height: 1.5em;
-}
 
 
 /* Content form */
@@ -172,50 +174,57 @@ body {
   margin-top: 0;
 }
 
-#content form input {
-  margin-bottom: 0 !important;
-}
-
 #content form label {
   display: none;
 }
 
-#content form fieldset input[type=text] {
-  border: 1px solid #ccc;
+#content form input {
+  margin: 0 !important;
+}
+
+#content form fieldset > input,
+#content form fieldset > a {
   border-radius: 5px;
-  margin-left: -2px;
+}
+
+#content form h1 input {
+  border: 1px solid #ccc;
   width: 100%;
 }
 
-#content form fieldset input[type=submit] {
+#content form fieldset > input {
   background-color: #005e9f;
-  border-radius: 5px;
-  border: 1px solid #033;
+  border-color: #033;
   color: #fff;
-  font-size: 0.95em;
-  font-weight: bold;
-  opacity: 0.5;
-  padding: 4px 16px;
 }
 
-#content form fieldset input[type=submit]:hover {
-  opacity: 1.0;
-}
-
-#content form fieldset a {
+#content form fieldset > a {
   background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-color: #ccc;
   color: #005e9f;
-  font-size: 0.95em;
-  font-weight: bold;
+  display: inline-block;
   margin-left: 16px;
+  text-align: center;
   text-decoration: none;
+}
+
+#content form fieldset > input,
+#content form fieldset > a {
+  border-width: 1px;
+  border-style: solid;
+  float: left;
+  font-size: 9pt;
+  font-weight: bold;
   opacity: 0.5;
   padding: 4px 16px;
 }
 
-#content form fieldset a:hover {
-  opacity: 1.0;
+#content form fieldset > a:hover {
   cursor: default;
 }
+
+#content form fieldset > input:hover,
+#content form fieldset > a:hover {
+  opacity: 1.0;
+}
+
