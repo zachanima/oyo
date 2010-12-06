@@ -103,11 +103,13 @@ a img {
  ***********/
 
 #content {
-  background: rgba(255, 255, 255, 0.251) url('bg-content.png');
+  background: rgba(255, 255, 255, 0.251) url('bg-content.png') repeat-x;
   border-radius: 5px;
   color: #005e9f;
   float: right;
   font-family: arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.5em;
   margin-bottom: 40px;
   min-height: 300px;
   padding: 16px;
