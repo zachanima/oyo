@@ -1,4 +1,4 @@
 <%= link_to 'Edit', edit_page_text_path(@page, text) %>
 <%= link_to 'Del', page_text_path(@page, text), :method => :delete, :confirm => 'Delete?' %>
 <%= content_tag :h2, text.title unless text.title.blank? %>
-<p><%= text.text %></p>
+<%== text.text %>

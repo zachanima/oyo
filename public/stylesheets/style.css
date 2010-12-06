@@ -139,14 +139,6 @@ a img {
   text-align: right;
 }
 
-#content form h1 input,
-#content form h2 input {
-  background-color: inherit;
-  border: 1px solid #ddd;
-  width: 100%;
-}
-
-  
 
 
 /* Content element */
@@ -212,6 +204,14 @@ a img {
 
 #content form input {
   margin: 0 !important;
+}
+
+#content form h1 input,
+#content form h2 input,
+#content form textarea {
+  background-color: inherit;
+  border: 1px solid #ddd;
+  width: 100%;
 }
 
 #content form fieldset > input,
