@@ -1,2 +1,4 @@
-<%= link_to 'Del', page_image_path(@page, image), :method => :delete, :confirm => 'Delete?' %>
-<span><%= link_to image_tag(image.image.url(:small)), image.image.url if image.image.exists? %></span>
+<div class="element image">
+  <%= link_to 'Del', page_image_path(@page, image), :method => :delete, :confirm => 'Delete?' %>
+  <span><%= link_to image_tag(image.image.url(:small)), image.image.url if image.image.exists? %></span>
+</div>

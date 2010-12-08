@@ -163,6 +163,13 @@ a img {
   width: 100%;
 }
 
+#content .image {
+  display: inline-block;
+  float: right;
+  margin: 0 0 0 16px;
+  width: auto;
+}
+
 #content .element:hover {
   background-color: #78a9ff;
 }
@@ -175,7 +182,6 @@ a img {
   float: left;
   font-size: 8pt;
   font-weight: bold;
-  margin-left: 48px;
   overflow: hidden;
   position: absolute;
   text-align: right;
@@ -194,6 +200,14 @@ a img {
 
 #content .element > a:first-child {
   margin-left: 0;
+}
+
+#content .element > a:nth-child(2) {
+  margin-left: 48px;
+}
+
+#content .element > a:nth-child(3) {
+  margin-left: 96px;
 }
 
 
