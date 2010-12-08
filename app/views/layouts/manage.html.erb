@@ -19,7 +19,7 @@
   <div id="nav">
     <ol>
       <% Page.all.each do |page| %>
-        <li><%= link_to page.title, page %></li>
+        <li><%= link_to page.title, manage_page_path(page) %></li>
       <% end %>
       <li><%= link_to 'New', new_page_path(@page) %></li>
     </ol>
