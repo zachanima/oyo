@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     if @page.save
       redirect_to manage_page_path(@page), :notice => 'The page was successfully created'
     else
-      render :action => :new
+      render :action => :new, :layout => 'manage'
     end
   end
 
@@ -33,7 +33,7 @@ class PagesController < ApplicationController
     if @page.update_attributes(params[:page])
       redirect_to manage_page_path(@page), :notice => 'The page was successfully updated'
     else
-      render :action => :edit
+      render :action => :edit, :layout => 'manage'
     end
   end
 

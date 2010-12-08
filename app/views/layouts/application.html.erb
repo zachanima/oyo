@@ -22,7 +22,7 @@
         <li><%= link_to page.title, page %></li>
       <% end %>
     </ol>
-    <%= link_to 'Manage', manage_page_path(@page) %>
+    <%= link_to 'Manage', manage_page_path(@page) if @page %>
   </div>
 
   <div id="content" data-page="<%= @page.id %>">
