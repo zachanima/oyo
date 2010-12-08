@@ -21,11 +21,12 @@
       <% Page.all.each do |page| %>
         <li><%= link_to page.title, page %></li>
       <% end %>
+      <li><%= link_to 'New', new_page_path(@page) %></li>
     </ol>
-    <%= link_to 'Manage', manage_page_path(@page) %>
+    <%= link_to 'Log out', root_path %>
   </div>
 
-  <div id="content" data-page="<%= @page.id %>">
+  <div class="manage" id="content" data-page="<%= @page.id %>">
     <%= yield %>
   </div>
 </div>

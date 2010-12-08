@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
   def find_page
     @page = Page.find_by_id(params[:page_id] || params[:id])
   end
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |login, password|
+      login == 'michael' && password == 'sennep42'
+    end
+  end
 end

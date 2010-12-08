@@ -1,0 +1,14 @@
+<div class="element">
+  <%= link_to 'Edit', edit_page_path(@page) %>
+  <%= link_to 'Del', @page, :method => :delete, :confirm => 'Delete?' %>
+  <h1><%= @page.title %></h1>
+</div>
+
+<div id="elements">
+  <%= render @page.elements.ordered %>
+</div>
+
+<div class="element">
+  <%= link_to 'Text', new_page_text_path(@page) %>
+  <%= link_to 'Pic', new_page_image_path(@page) %>
+</div>

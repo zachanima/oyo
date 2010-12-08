@@ -170,11 +170,15 @@ a img {
   width: auto;
 }
 
-#content .element:hover {
+#content .element > a {
+  display: none;
+}
+
+#content.manage .element:hover {
   background-color: #78a9ff;
 }
 
-#content .element > a {
+#content.manage .element > a {
   background-color: #005e9f;
   opacity: 0.5;
   color: #fff;
@@ -190,23 +194,23 @@ a img {
   height: 32px;
 }
 
-#content .element:hover > a {
+#content.manage .element:hover > a {
   display: inline-block;
 }
 
-#content .element > a:hover {
+#content.manage .element > a:hover {
   opacity: 1.0;
 }
 
-#content .element > a:first-child {
+#content.manage .element > a:first-child {
   margin-left: 0;
 }
 
-#content .element > a:nth-child(2) {
+#content.manage .element > a:nth-child(2) {
   margin-left: 48px;
 }
 
-#content .element > a:nth-child(3) {
+#content.manage .element > a:nth-child(3) {
   margin-left: 96px;
 }
 

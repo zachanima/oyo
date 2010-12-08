@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  before_filter :find_page, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate, :except => [:index, :show]
+  before_filter :find_page, :only => [:show, :edit, :update, :destroy, :manage]
 
   def index
     @page = Page.first
@@ -12,22 +13,25 @@ class PagesController < ApplicationController
 
   def new
     @page = Page.new
+    render :layout => 'manage'
   end
 
   def create
     @page = Page.new(params[:page])
     if @page.save
-      redirect_to @page, :notice => 'The page was successfully created'
+      redirect_to manage_page_path(@page), :notice => 'The page was successfully created'
     else
       render :action => :new
     end
   end
 
-  # def edit
+  def edit
+    render :layout => 'manage'
+  end
 
   def update
     if @page.update_attributes(params[:page])
-      redirect_to @page, :notice => 'The page was successfully updated'
+      redirect_to manage_page_path(@page), :notice => 'The page was successfully updated'
     else
       render :action => :edit
     end
@@ -39,6 +43,10 @@ class PagesController < ApplicationController
     else
       redirect_to @page, :alert => 'The page could not be deleted'
     end
+  end
+
+  def manage
+    render :layout => 'manage'
   end
 
   private
