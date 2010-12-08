@@ -6,25 +6,28 @@ class ElementsController < ApplicationController
   def new
     @element = @page.elements.new
     @element.type = @class
+    render :layout => 'manage'
   end
 
   def create
     @element = @page.elements.new(params[:element])
     @element.type = @class
     if @element.save
-      redirect_to @page, :notice => 'The element was successfully created'
+      redirect_to manage_page_path(@page), :notice => 'The element was successfully created'
     else
-      render :action => :new
+      render :action => :new, :layout => 'manage'
     end
   end
 
-  # def edit
+  def edit
+    render :layout => 'manage'
+  end
 
   def update
     if @element.update_attributes(params[:element])
-      redirect_to @page, :notice => 'The element was successfully updated'
+      redirect_to manage_page_path(@page), :notice => 'The element was successfully updated'
     else
-      render :action => :edit
+      render :action => :edit, :layout => 'manage'
     end
   end
 
@@ -34,7 +37,7 @@ class ElementsController < ApplicationController
     else
       flash[:notice] = 'The element could not be deleted'
     end
-    redirect_to @page
+    redirect_to manage_page_path(@page)
   end
 
   def sort
