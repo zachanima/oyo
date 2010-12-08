@@ -3,6 +3,7 @@ class Element < ActiveRecord::Base
 
   scope :ordered, order('position')
 
+  acts_as_list
   has_attached_file :image, :styles => {
     :thumb => '100x100#',
     :small => '240x240>'

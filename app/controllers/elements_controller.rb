@@ -37,6 +37,14 @@ class ElementsController < ApplicationController
     redirect_to @page
   end
 
+  def sort
+    @page.elements.each do |element|
+      element.position = params['element'].index(element.id.to_s) + 1
+      element.save
+    end
+    render :nothing => true
+  end
+
   private
   def find_element
     @element = Element.find_by_id params[:id]

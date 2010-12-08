@@ -4,7 +4,9 @@
   <h1><%= @page.title %></h1>
 </div>
 
-<%= render @page.elements.ordered %>
+<div id="elements">
+  <%= render @page.elements.ordered %>
+</div>
 
 <div class="element">
   <%= link_to 'Text', new_page_text_path(@page) %>
