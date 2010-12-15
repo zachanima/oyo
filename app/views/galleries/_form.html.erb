@@ -1,0 +1,20 @@
+<% @page.errors.full_messages.each do |message| %>
+  <p class="error"><%= message %>.</p>
+<% end %>
+
+<%= form_for @page, :url => @page.new_record? ? galleries_path : nil do |form| %>
+  <fieldset>
+    <ol>
+      <li>
+        <h1>
+          <%= label :page, :title, :class => 'required' %>
+          <%= text_field :page, :title %>
+        </h1>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <%= form.submit %>
+    <%= link_to 'Cancel', pages_path %>
+  </fieldset>
+<% end %>
