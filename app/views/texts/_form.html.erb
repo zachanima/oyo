@@ -2,12 +2,6 @@
   :url => @element.new_record? ? page_texts_path(@page) : nil do |form| %>
   <fieldset>
     <ol>
-      <!--<li>
-        <h2>
-          <%= label :element, :title %>
-          <%= text_field :element, :title %>
-        </h2>
-      </li>-->
       <li>
         <%= label :element, :text %>
         <%= text_area :element, :text, :class => 'mceEditor' %>
