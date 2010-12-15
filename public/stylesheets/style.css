@@ -1,6 +1,29 @@
 /***********
  * GENERAL *
  ***********/
+@font-face {
+  font-family: Delicious;
+  src: url('Delicious-Roman.otf');
+}
+
+@font-face {
+  font-family: Delicious;
+  font-weight: bold;
+  src: url('Delicious-Bold.otf');
+}
+
+@font-face {
+  font-family: Delicious;
+  font-style: italic;
+  src: url('Delicious-Italic.otf');
+}
+
+@font-face {
+  font-family: Delicious;
+  font-style: italic;
+  font-weight: bold;
+  src: url('Delicious-BoldItalic.otf');
+}
 
 * {
   outline: none;
@@ -52,9 +75,9 @@ a img {
 }
 
 #header span {
-  font-family: sans-serif;
-  font-size: 28pt;
-  margin-top: 40px;
+  font-family: 'Delicious', sans-serif;
+  font-size: 32pt;
+  margin-top: 38px;
   float: right;
 }
 
@@ -146,18 +169,20 @@ a img {
 
 #content h1, #content form h1 input {
   color: #f5d900;
-  font-family: 'Trebuchet MS', arial, sans-serif;
-  font-size: 20pt;
+  font-size: 24pt;
   font-weight: bold;
   text-align: right;
 }
 
 #content h2, #content form h2 input {
   color: #fff;
-  font-family: 'Trebuchet MS', arial, sans-serif;
   font-size: 18pt;
   font-weight: bold;
   text-align: right;
+}
+
+#content h1, #content h2, #content form h1 input, #content form h2 input {
+	font-family: 'Delicious', 'Trebuchet MS', arial, sans-serif;
 }
 
 
