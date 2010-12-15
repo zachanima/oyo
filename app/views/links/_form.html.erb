@@ -1,0 +1,22 @@
+<% @page.errors.full_messages.each do |message| %>
+  <p class="error"><%= message %>.</p>
+<% end %>
+
+<%= form_for @page, :url => @page.new_record? ? links_path : nil do |form| %>
+  <fieldset>
+    <ol>
+      <li>
+        <%= label :page, :title, :class => 'required' %>
+        <%= text_field :page, :title %>
+      </li>
+      <li>
+        <%= label :page, :url %>
+        <%= text_field :page, :url %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <%= form.submit %>
+    <%= link_to 'Cancel', pages_path %>
+  </fieldset>
+<% end %>

@@ -7,6 +7,7 @@ Oyo::Application.routes.draw do
     resources :texts
     resources :images
   end
+  resources :links
 
   root :to => "pages#index"
 end
