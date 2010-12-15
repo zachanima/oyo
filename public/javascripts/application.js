@@ -1,5 +1,5 @@
 $(function() {
-  $('#elements').sortable({
+  $('.manage #elements').sortable({
     opacity: 0.5,
     scroll: true,
     update: function() {
