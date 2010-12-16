@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   private
   def find_page
-    @page = Page.find_by_id(params[:page_id] || params[:id])
+    @page = Page.find_by_id(params[:page_id] || params[:gallery_id] || params[:id])
   end
 
   def authenticate

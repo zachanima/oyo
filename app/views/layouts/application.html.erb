@@ -23,7 +23,13 @@
         <li><%= link_to page.title, page %></li>
       <% end %>
     </ol>
-    <%= link_to 'Manage', manage_page_path(@page) if @page %>
+    <% if @page %>
+      <% if @page.type == 'Gallery' %>
+        <%= link_to 'Manage', manage_gallery_path(@page) %>
+      <% else %>
+        <%= link_to 'Manage', manage_page_path(@page) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div id="content" data-page="<%= @page.id %>">

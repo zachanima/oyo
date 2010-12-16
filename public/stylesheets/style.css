@@ -208,6 +208,17 @@ a img {
   -moz-border-radius: 5px;
 }
 
+#content .gallery a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#content .gallery img {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
 #content .element > a {
   display: none;
 }
