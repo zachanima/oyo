@@ -1,6 +1,6 @@
 <%= form_for [@page, @element],
   :html => { :multipart => true },
-  :url => @element.new_record? ? page_images_path(@page) : nil do |form| %>
+  :url => @element.new_record? ? (@page.type == 'Gallery' ? gallery_images_path : page_images_path(@page)) : nil do |form| %>
   <fieldset>
     <ol>
       <li>
@@ -17,6 +17,6 @@
   </fieldset>
   <fieldset>
     <%= form.submit %>
-    <%= link_to 'Cancel', manage_page_path(@page) %>
+    <%= link_to 'Cancel', @page.type == 'Gallery' ? manage_gallery_path : manage_page_path(@page) %>
   </fieldset>
 <% end %>
