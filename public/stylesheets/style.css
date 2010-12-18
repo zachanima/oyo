@@ -77,6 +77,8 @@ a img {
 #header span {
   font-family: 'Delicious', sans-serif;
   font-size: 32pt;
+  font-weight: bold;
+  letter-spacing: 1pt;
   margin-top: 38px;
   float: right;
 }
