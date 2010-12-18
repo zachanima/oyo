@@ -1,0 +1,6 @@
+<div class="show_image">
+  <%= image_tag @element.image.url(:small) %>
+  <span><%= @element.text %></span>
+</div>
+
+<%= render :template => 'galleries/show' %>

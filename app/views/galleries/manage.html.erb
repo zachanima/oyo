@@ -6,7 +6,7 @@
 
 <div class="gallery" id="elements">
   <% @page.elements.ordered.each do |element| %>
-    <%= link_to image_tag(element.image.url(:thumb)), element.image.url if element.image.exists? %>
+    <%= link_to image_tag(element.image.url(:thumb)), edit_gallery_image_path(@page, element) if element.image.exists? %>
   <% end %>
 </div>
 

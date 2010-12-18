@@ -1,17 +1,2 @@
 <h1>New image</h1>
-<%= form_for [@page, @element],
-  :html => { :multipart => true },
-  :url => @element.new_record? ? page_images_path(@page) : nil do |form| %>
-  <fieldset>
-    <ol>
-      <li>
-        <%= label :element, :image %>
-        <%= file_field :element, :image %>
-      </li>
-    </ol>
-  </fieldset>
-  <fieldset>
-    <%= form.submit %>
-    <%= link_to 'Cancel', manage_page_path(@page) %>
-  </fieldset>
-<% end %>
+<%= render 'form' %>

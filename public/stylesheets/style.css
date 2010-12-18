@@ -225,6 +225,15 @@ a img {
   display: none;
 }
 
+#content .show_image {
+  text-align: center;
+}
+
+#content .show_image img {
+  display: block;
+  margin: 0 auto 8px auto;
+}
+
 #content.manage .element:hover {
   background-color: #78a9ff;
 }
