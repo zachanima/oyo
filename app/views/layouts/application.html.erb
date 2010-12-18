@@ -20,7 +20,7 @@
   <div id="nav">
     <ol>
       <% Page.all.each do |page| %>
-        <li><%= link_to page.title, page %></li>
+        <li><%= link_to page.title, page.type == 'Link' ? page.url : page %></li>
       <% end %>
     </ol>
     <% if @page %>
