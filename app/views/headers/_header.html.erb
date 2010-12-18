@@ -1,0 +1,5 @@
+<div id="element_<%= header.id %>" class="element">
+  <%= link_to 'Edit', edit_page_header_path(@page, header) %>
+  <%= link_to 'Del', page_header_path(@page, header), :method => :delete, :confirm => 'Delete?' %>
+  <h2><%== header.text %></h2>
+</div>

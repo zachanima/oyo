@@ -6,6 +6,7 @@ Oyo::Application.routes.draw do
     end
     resources :texts
     resources :images
+    resources :headers
   end
   resources :galleries do
     get :manage, :on => :member

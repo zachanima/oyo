@@ -1,0 +1,2 @@
+class HeadersController < ElementsController
+end
