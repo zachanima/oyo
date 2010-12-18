@@ -110,7 +110,7 @@ a img {
 }
 
 #nav a {
-  color: #fff;
+  color: #005e9f;
   display: block;
   font-size: 1em;
   text-decoration: none;
@@ -122,7 +122,7 @@ a img {
 
 #nav > ol > li > a {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
+  color: #005e9f;
   font-weight: bold;
   line-height: 1.2em;
 }
