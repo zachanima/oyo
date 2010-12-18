@@ -7,7 +7,7 @@
         <%= label :element, :text %>
         <%= text_field :element, :text %>
       </li>
-      <% unless @element.new_record? %>
+      <% if @element.new_record? %>
         <li>
           <%= label :element, :image %>
           <%= file_field :element, :image %>
