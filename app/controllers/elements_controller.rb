@@ -60,8 +60,4 @@ class ElementsController < ApplicationController
   def find_element
     @element = Element.find_by_id params[:id]
   end
-
-  def find_class
-    @class = params[:controller].titleize.singularize.constantize
-  end
 end

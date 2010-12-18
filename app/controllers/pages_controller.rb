@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
   before_filter :find_page, :only => [:show, :edit, :update, :destroy, :manage]
+  before_filter :find_class, :only => [:new, :create]
 
   def index
     @page = Page.first
@@ -12,12 +13,12 @@ class PagesController < ApplicationController
   # def show
 
   def new
-    @page = Page.new
+    @page = @class.new
     render :layout => 'manage'
   end
 
   def create
-    @page = Page.new(params[:page])
+    @page = @class.new(params[:page])
     if @page.save
       redirect_to manage_page_path(@page), :notice => 'The page was successfully created'
     else
@@ -47,10 +48,5 @@ class PagesController < ApplicationController
 
   def manage
     render :layout => 'manage'
-  end
-
-  private
-  def find_page
-    @page = Page.find_by_id params[:id]
   end
 end

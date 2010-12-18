@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       login == 'michael' && password == 'secret'
     end
   end
+
+  def find_class
+    @class = params[:controller].titleize.singularize.constantize
+  end
 end
