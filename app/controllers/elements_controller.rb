@@ -13,11 +13,7 @@ class ElementsController < ApplicationController
     @element = @page.elements.new(params[:element])
     @element.type = @class
     if @element.save
-      if @page.type == Gallery
-        redirect_to manage_gallery_path(@page), :notice => 'The element was successfully created'
-      else
-        redirect_to manage_page_path(@page), :notice => 'The element was successfully created'
-      end
+      redirect_to manage_path(@page), :notice => 'The element was successfully created'
     else
       render :action => :new, :layout => 'manage'
     end
@@ -29,11 +25,7 @@ class ElementsController < ApplicationController
 
   def update
     if @element.update_attributes(params[:element])
-      if @page.type == Gallery
-        redirect_to manage_gallery_path(@page), :notice => 'The element was successfully updated'
-      else
-        redirect_to manage_page_path(@page), :notice => 'The element was successfully updated'
-      end
+      redirect_to manage_path(@page), :notice => 'The element was successfully updated'
     else
       render :action => :edit, :layout => 'manage'
     end
