@@ -4,18 +4,18 @@ class ElementsController < ApplicationController
   before_filter :find_class, :only => [:new, :create]
 
   def new
-    @element = @page.elements.new
-    @element.type = @class
+    @element = @class.new
     render :layout => 'manage'
   end
 
   def create
-    @element = @page.elements.new(params[:element])
-    @element.type = @class
+    @element = @class.new params[:element]
+    @element.page = @page
+
     if @element.save
       redirect_to manage_path(@page), :notice => 'The element was successfully created'
     else
-      render :action => :new, :layout => 'manage'
+      render :new, :layout => 'manage'
     end
   end
 
@@ -24,10 +24,10 @@ class ElementsController < ApplicationController
   end
 
   def update
-    if @element.update_attributes(params[:element])
+    if @element.update_attributes params[:element]
       redirect_to manage_path(@page), :notice => 'The element was successfully updated'
     else
-      render :action => :edit, :layout => 'manage'
+      render :edit, :layout => 'manage'
     end
   end
 
@@ -37,7 +37,7 @@ class ElementsController < ApplicationController
     else
       flash[:notice] = 'The element could not be deleted'
     end
-    redirect_to manage_page_path(@page)
+    redirect_to manage_page_path @page
   end
 
   def sort
