@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper_method :manage_path
 
   private
   def find_page
@@ -17,5 +18,11 @@ class ApplicationController < ActionController::Base
 
   def find_class
     @class = params[:controller].titleize.singularize.constantize
+  end
+
+  # Call manage path from page type.
+  # TODO: Make page type default to 'page' in the database.
+  def manage_path page
+    send ['manage', (page.type || 'page').to_s.downcase, 'path'] * '_', page
   end
 end
