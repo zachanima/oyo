@@ -19,17 +19,9 @@
 <div id="main">
   <div id="nav">
     <ol>
-      <% Page.all.each do |page| %>
-        <li><%= link_to page.title, page.type == 'Link' ? page.url : page %></li>
-      <% end %>
+      <%= render Page.all %>
     </ol>
-    <% if @page %>
-      <% if @page.type == 'Gallery' %>
-        <%= link_to 'Manage', manage_gallery_path(@page) %>
-      <% else %>
-        <%= link_to 'Manage', manage_page_path(@page) %>
-      <% end %>
-    <% end %>
+    <%= link_to 'Manage', manage_path(@page) if @page %>
   </div>
 
   <div id="content" data-page="<%= @page.id %>">

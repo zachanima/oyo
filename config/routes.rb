@@ -12,7 +12,9 @@ Oyo::Application.routes.draw do
     get :manage, :on => :member
     resources :images
   end
-  resources :links
+  resources :links do
+    get :manage, :on => :member
+  end
 
   root :to => "pages#index"
 end
