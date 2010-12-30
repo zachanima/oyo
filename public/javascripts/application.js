@@ -15,6 +15,7 @@ $(function() {
   $('.manage #pages').sortable({
     opacity: 0.5,
     scroll: true,
+    axis: 'y',
     update: function() {
       $.ajax({
         type: 'post',
