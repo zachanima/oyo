@@ -1,6 +1,7 @@
 Oyo::Application.routes.draw do
   resources :pages do
     get :manage, :on => :member
+    post :sort, :on => :collection
     resources :elements do
       post :sort, :on => :collection
     end

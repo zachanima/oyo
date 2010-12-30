@@ -11,4 +11,17 @@ $(function() {
       });
     }
   });
+
+  $('.manage #pages').sortable({
+    opacity: 0.5,
+    scroll: true,
+    update: function() {
+      $.ajax({
+        type: 'post',
+        data: $('#pages').sortable('serialize'),
+        dataType: 'script',
+        url: '/pages/sort'
+      });
+    }
+  });
 });

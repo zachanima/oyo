@@ -46,6 +46,14 @@ class PagesController < ApplicationController
     end
   end
 
+  def sort
+    Page.all.each do |page|
+      page.position = params['page'].index(page.id.to_s) + 1
+      page.save
+    end
+    render :nothing => true
+  end
+
   def manage
     render :layout => 'manage'
   end
