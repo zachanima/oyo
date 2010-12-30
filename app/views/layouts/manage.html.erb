@@ -24,7 +24,7 @@
           <%= link_to page.title, manage_path(page) %>
           <% if page.pages %>
             <ol>
-              <% Page.where(:parent_id => page.id).order(:position).each do |subpage| %>
+              <% Page.where(:parent_id => page.id).order(:id).each do |subpage| %>
                 <li><%= link_to subpage.title, manage_path(subpage) %></li>
               <% end %>
             </ol>

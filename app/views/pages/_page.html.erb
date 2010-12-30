@@ -1,8 +1,8 @@
-<li>
+<li id="page_<%= page.id %>">
   <%= link_to page.title, page %>
   <% if page.pages %>
     <ol>
-      <% Page.where(:parent_id => page.id).order(:position).each do |subpage| %>
+      <% Page.where(:parent_id => page.id).order(:id).each do |subpage| %>
         <%= render subpage %>
       <% end %>
     </ol>

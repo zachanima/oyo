@@ -48,7 +48,7 @@ class PagesController < ApplicationController
 
   def sort
     Page.all.each do |page|
-      page.position = params['page'].index(page.id.to_s) + 1
+      page.position = (params['page'].index(page.id.to_s) || 0) + 1
       page.save
     end
     render :nothing => true

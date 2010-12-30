@@ -1,1 +1,10 @@
-<li><%= link_to gallery.title, gallery %></li>
+<li id="page_<%= gallery.id %>">
+  <%= link_to gallery.title, gallery %>
+  <% if gallery.pages %>
+    <ol>
+      <% Page.where(:parent_id => gallery.id).order(:id).each do |subpage| %>
+        <%= render subpage %>
+      <% end %>
+    </ol>
+  <% end %>
+</li>

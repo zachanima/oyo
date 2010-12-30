@@ -1,1 +1,10 @@
-<li><%= link_to link.title, link.url %></li>
+<li id="page_<%= link.id %>">
+  <%= link_to link.title, link.url %>
+  <% if link.pages %>
+    <ol>
+      <% Page.where(:parent_id => link.id).order(:id).each do |subpage| %>
+        <%= render subpage %>
+      <% end %>
+    </ol>
+  <% end %>
+</li>
