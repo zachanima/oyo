@@ -232,6 +232,8 @@ a img {
 #content .show_image img {
   display: block;
   margin: 0 auto 8px auto;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
 #content.manage .element:hover {
