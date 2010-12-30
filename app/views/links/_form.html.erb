@@ -13,6 +13,10 @@
         <%= label :page, :url %>
         <%= text_field :page, :url %>
       </li>
+      <li>
+        <%= label :page, :parent_id %>
+        <%= collection_select :page, :parent_id, Page.where(:parent_id => nil).order(:position), :id, :title, :include_blank => true %>
+      </li>
     </ol>
   </fieldset>
   <fieldset>

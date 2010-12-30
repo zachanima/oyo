@@ -13,7 +13,8 @@
       </li>
       <li>
         <%= form.label :parent_id %>
-        <%= form.collection_select :parent_id, Page.order(:position), :id, :title, :include_blank => true %>
+        <%= form.collection_select :parent_id, Page.where(:parent_id => nil).order(:position), :id, :title, :include_blank => true %>
+      </li>
     </ol>
   </fieldset>
   <fieldset>
