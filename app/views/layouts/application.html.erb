@@ -19,7 +19,7 @@
 <div id="main">
   <div id="nav">
     <ol>
-      <%= render Page.order(:position) %>
+      <%= render Page.where(:parent_id => nil).order(:position) %>
     </ol>
     <%= link_to 'Manage', manage_path(@page) if @page %>
   </div>

@@ -11,6 +11,9 @@
           <%= form.text_field :title %>
         </h1>
       </li>
+      <li>
+        <%= form.label :parent_id %>
+        <%= form.collection_select :parent_id, Page.order(:position), :id, :title, :include_blank => true %>
     </ol>
   </fieldset>
   <fieldset>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230182601) do
+ActiveRecord::Schema.define(:version => 20101230184221) do
 
   create_table "elements", :force => true do |t|
     t.text     "text"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20101230182601) do
     t.string   "type"
     t.string   "url"
     t.integer  "position"
+    t.integer  "parent_id"
   end
 
 end
