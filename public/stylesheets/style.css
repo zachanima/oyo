@@ -139,6 +139,14 @@ a img {
   visibility: visible;
 }
 
+#nav li li {
+  display: none;
+}
+
+#nav li.active li {
+  display: inherit;
+}
+
 #nav li li a:hover {
   text-decoration: underline;
 }

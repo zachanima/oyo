@@ -1,4 +1,4 @@
-<li id="page_<%= page.id %>">
+<li <%== active_class page %> id="page_<%= page.id %>">
   <%= link_to page.title, page %>
   <% if page.pages %>
     <ol>

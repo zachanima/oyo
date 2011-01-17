@@ -20,7 +20,7 @@
   <div class="manage" id="nav">
     <ol id="pages">
       <% Page.where(:parent_id => nil).order(:position).each do |page| %>
-        <li id="page_<%= page.id %>">
+        <li <%== active_class page %> id="page_<%= page.id %>">
           <%= link_to page.title, manage_path(page) %>
           <% if page.pages %>
             <ol>
