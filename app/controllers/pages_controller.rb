@@ -4,9 +4,10 @@ class PagesController < ApplicationController
   before_filter :find_class, :only => [:new, :create]
 
   def index
-    @page = Page.first
-    if @page
+    if @page = Page.order(:position).first
       redirect_to @page
+    else
+      render :layout => nil, :status => '404'
     end
   end
 
