@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_filter :find_class, :only => [:new, :create]
 
   def index
-    if @page = Page.order(:position).first
+    if @page = Page.where(:parent_id => nil).order(:position).first
       redirect_to @page
     else
       render :layout => nil, :status => '404'
