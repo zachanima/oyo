@@ -41,10 +41,16 @@ class ElementsController < ApplicationController
   end
 
   def sort
+    if params['element'].uniq.count <= 1
+      render :nothing => true
+      return
+    end
+      
     @page.elements.each do |element|
       element.position = params['element'].index(element.id.to_s) + 1
       element.save
     end
+
     render :nothing => true
   end
 
