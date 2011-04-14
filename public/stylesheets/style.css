@@ -215,7 +215,7 @@ a img {
 }
 
 #content .image {
-  display: inline-block;
+  display: inline;
   float: right;
   margin: 0 0 0 16px;
   width: auto;
