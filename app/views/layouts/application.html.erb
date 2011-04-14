@@ -12,10 +12,15 @@
 <div id="header">
   <div>
     <!--<%= link_to image_tag('/images/header.png'), root_path %>-->
-    <strong>Go for Goa</strong>
     <span>Danmark - Indien</span>
+    <strong>Go for Goa</strong>
   </div>
 </div>
+
+<!--[if lt IE 7]>
+<p class="warning">Du bruger en meget uddateret version af Internet Explorer. <a href="http://www.browserchoice.eu/BrowserChoice/browserchoice_da.htm">Skift eller opdat&eacute;r</a> venligst din browser for at se denne side som intenderet.</p>
+<div style="display: none;">
+<![endif]-->
 
 <div id="main">
   <div id="nav">
@@ -29,6 +34,10 @@
     <%= yield %>
   </div>
 </div>
+
+<!--[if lt IE 7]>
+</div>
+<![endif]-->
 
 </body>
 </html>
